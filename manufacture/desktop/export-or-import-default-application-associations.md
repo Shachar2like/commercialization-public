@@ -106,4 +106,8 @@ You can change the default app association settings in a WIM or VHD file before 
      Dism.exe /Image:C:\test\offline /Import-DefaultAppAssociations:F:\1809-DefaultAppAssociations.xml
      Dism.exe /Image:C:\test\offline /Import-DefaultAppAssociations:F:\InternetExplorerAssociations.xml
      ```
-  
+  * about using the 'dism.exe /online' version of this command: the dism /online command simply replaces the file in c:\windows\system32\OEMDefaultAssociations.xml (tested on windows 10 1803)
+
+with an /online OS you WILL need to edit the original (windows 10 1803) association file and change the file types that you want (keeping all of the other defaults intect) so as to not have notifications.
+
+assuming associations weren't changed, to get the default (windows 10 1803) associations. simply login with a NEW USER PROFILE (that HAS NOT logged in before into the computer) or delete the user profile (properties on my computer/this pc -> advanced system settings -> user profiles -> NOTE: this will delete ALL THE USER'S DATA including desktop, documents, downloads and more)
